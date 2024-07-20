@@ -63,4 +63,17 @@ public class MainController {
         num++;
         return num;
     }
+
+    @GetMapping("/gugu")
+    @ResponseBody
+    public String gugudan(@RequestParam("dan") int dan, @RequestParam("limit") int limit) {
+
+        String rs = "";
+        for (int i = 1; i <= limit; i++) {
+            rs += "%d*%d=%d\n".formatted(dan, i, dan * i);
+        }
+        return rs;
+    }
+
+
 }
