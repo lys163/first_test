@@ -42,4 +42,25 @@ public class MainController {
                 <h1>Get 방식</h1>
                 """.formatted(age);
     }
+
+    //test1
+    @GetMapping("/plus")
+    @ResponseBody
+    public int test1(int a, int b){
+        return a+b;
+    }
+
+    @GetMapping("/minus")
+    @ResponseBody
+    public int test2(int a, int b){
+        return a-b;
+    }
+
+    private int num=-1;
+    @GetMapping("/increase")
+    @ResponseBody
+    public int increasetest(){
+        num++;
+        return num;
+    }
 }
